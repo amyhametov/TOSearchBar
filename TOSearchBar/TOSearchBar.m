@@ -41,7 +41,6 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
 @property (nonatomic, strong) UITapGestureRecognizer *tapGestureRecognizer;
 
 /* View Set-up */
-- (void)setUpViews;
 - (void)setUpBackgroundViews;
 - (void)setUpPlaceholderViews;
 - (void)setUpButtons;
