@@ -476,7 +476,7 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
-    if ([self.delegate respondsToSelector:@selector(searchBar:shouldChangeTextInRange:replacementText:)]) {
+    if ([self.delegate respondsToSelector:@selector(searchBar:shouldChangeCharactersInRange:replacementString:)]) {
         return [self.delegate searchBar:self shouldChangeCharactersInRange:range replacementString:string];
     }
     
