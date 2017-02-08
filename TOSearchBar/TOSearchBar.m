@@ -321,6 +321,9 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
 
 - (void)cancelButttonTapped:(id)sender
 {
+    if ([self.delegate respondsToSelector:@selector(searchBarCancelButtonTapped:)]) {
+        [self.delegate searchBarCancelButtonTapped:self];
+    }
     [self resignFirstResponder];
 }
 

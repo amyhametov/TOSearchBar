@@ -74,6 +74,11 @@ typedef NS_ENUM(NSInteger, TOSearchBarStyle) {
  */
 - (void)searchBarSearchButtonTapped:(TOSearchBar *)searchBar;
 
+/**
+ Called after the user hits the 'Cancel' button. Can be used to set up actions for that event.
+ */
+- (void)searchBarCancelButtonTapped:(TOSearchBar *)searchBar;
+
 @end
 
 IB_DESIGNABLE
