@@ -58,7 +58,7 @@ static NSString * const kSharedClearIconKey = @"SharedClearIcon";
         return image;
     }
     
-    CGRect frame = (CGRect){0,0,15,28};
+    CGRect frame = (CGRect){0, 0, 15, 40};
     UIGraphicsBeginImageContextWithOptions(frame.size, NO, 0.0f);
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:frame cornerRadius:4.5f];
     [[UIColor blackColor] set];
