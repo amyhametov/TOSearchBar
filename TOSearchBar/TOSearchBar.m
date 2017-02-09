@@ -93,6 +93,13 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
     [TOSearchBar cleanUpSharedAssets];
 }
 
+- (void)clearView {
+    self.text = nil;
+    self.clearButton.enabled = NO;
+    self.placeholderLabel.hidden = NO;
+    [self setClearButtonHidden:YES animated:YES];
+}
+
 #pragma mark - View Set-up -
 - (void)setUpViews
 {
@@ -300,10 +307,7 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
 
 - (void)clearButtonTapped:(id)sender
 {
-    self.text = nil;
-    self.clearButton.enabled = NO;
-    self.placeholderLabel.hidden = NO;
-    [self setClearButtonHidden:YES animated:YES];
+    [self clearView];
     [self becomeFirstResponder];
     
     if ([self.delegate respondsToSelector:@selector(searchBarClearButtonTapped:)]) {
@@ -313,6 +317,7 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
 
 - (void)cancelButttonTapped:(id)sender
 {
+    [self clearView];
     if ([self.delegate respondsToSelector:@selector(searchBarCancelButtonTapped:)]) {
         [self.delegate searchBarCancelButtonTapped:self];
     }
