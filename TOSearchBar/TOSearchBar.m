@@ -72,6 +72,7 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
 {
     if (self = [super initWithFrame:frame]) {
         _style = style;
+        [self setUpViews];
     }
     
     return self;
@@ -81,6 +82,7 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
 {
     if (self = [super initWithFrame:CGRectZero]) {
         _style = style;
+        [self setUpViews];
     }
     
     return self;
@@ -89,15 +91,6 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
 - (void)dealloc
 {
     [TOSearchBar cleanUpSharedAssets];
-}
-
-#pragma mark - View Lifecycle -
-- (void)didMoveToSuperview
-{
-    [super didMoveToSuperview];
-    if (self.superview != nil) {
-        [self setUpViews];
-    }
 }
 
 #pragma mark - View Set-up -
