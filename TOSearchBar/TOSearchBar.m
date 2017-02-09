@@ -214,10 +214,10 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
     CGSize clearImageSize = self.clearButton.imageView.image.size;
     
     if (self.cancelButton) {
-        self.cancelButton.alpha = self.editing ? 1.0f : 0.0f;
+        self.cancelButton.alpha = (self.editing || self.hasSearchText) ? 1.0f : 0.0f;
         frame = self.cancelButton.frame;
         frame.origin.y = (CGRectGetHeight(self.frame) - frame.size.height) * 0.5f;
-        if (self.editing) {
+        if (self.editing || self.hasSearchText) {
             frame.origin.x = (CGRectGetWidth(self.frame) - (frame.size.width + self.horizontalInset));
         }
         else {
@@ -229,7 +229,9 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
     // Layout the background view (and content container)
     frame = self.barBackgroundView.frame;
     frame.size.width = (self.frame.size.width) - (self.horizontalInset * 2.0f);
-    if (self.editing && self.cancelButton) { frame.size.width -= self.cancelButton.frame.size.width; }
+    if ((self.editing || self.hasSearchText) && self.cancelButton) {
+        frame.size.width -= self.cancelButton.frame.size.width;
+    }
     frame.origin.x = self.horizontalInset;
     frame.origin.y = floorf((self.frame.size.height - frame.size.height) * 0.5f);
     self.barBackgroundView.frame = frame;
