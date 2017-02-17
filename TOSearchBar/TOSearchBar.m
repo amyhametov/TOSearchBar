@@ -257,7 +257,7 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
     else {
         frame.origin.x = CGRectGetMinX(self.placeholderLabel.frame) - (CGRectGetWidth(self.iconView.frame) + kTOSearchBarIconMargin);
     }
-    frame.origin.y = CGRectGetMidY(self.placeholderLabel.frame) - (CGRectGetHeight(self.iconView.frame) * 0.5f);
+    frame.origin.y = (int)(CGRectGetMidY(self.placeholderLabel.frame) - (CGRectGetHeight(self.iconView.frame) * 0.5f));
     self.iconView.frame = frame;
     
     // lay out the text field
