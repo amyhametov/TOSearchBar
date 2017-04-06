@@ -23,7 +23,7 @@
 #import "TOSearchBar.h"
 #import "TOSearchBar+Assets.h"
 
-static const CGFloat kTOSearchBarInset = 8.0f; // inset from inside the bar
+static const CGFloat kTOSearchBarInset = 12.0f; // inset from inside the bar
 static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and placeholder
 
 @interface TOSearchBar () <UIGestureRecognizerDelegate, UITextFieldDelegate>
