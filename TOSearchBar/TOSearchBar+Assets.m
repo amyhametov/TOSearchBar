@@ -51,6 +51,10 @@ static NSString * const kSharedClearIconKey = @"SharedClearIcon";
     imageTable = nil;
 }
 
++ (CGRect)sharedBackgroundFrame {
+    return (CGRect){0, 0, 15, 40};
+}
+
 + (UIImage *)sharedSearchBarBackground
 {
     UIImage *image = [imageTable objectForKey:kSharedBackgroundKey];
@@ -58,7 +62,8 @@ static NSString * const kSharedClearIconKey = @"SharedClearIcon";
         return image;
     }
     
-    CGRect frame = (CGRect){0, 0, 15, 40};
+    //CGRect frame = (CGRect){0, 0, 15, 40};
+    CGRect frame = [TOSearchBar sharedBackgroundFrame];
     UIGraphicsBeginImageContextWithOptions(frame.size, NO, 0.0f);
     UIBezierPath *path = [UIBezierPath bezierPathWithRoundedRect:frame cornerRadius:6];
     [[UIColor blackColor] set];

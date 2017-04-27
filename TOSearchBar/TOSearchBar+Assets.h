@@ -24,6 +24,7 @@
 
 @interface TOSearchBar (ImageAssets)
 
++ (CGRect)sharedBackgroundFrame; /* Default frame for background */
 + (UIImage *)sharedSearchBarBackground; /* The rounded rectangle for the background */
 + (UIImage *)sharedSearchIcon; /* The magnifying glads icon */
 + (UIImage *)sharedClearIcon;  /* The clear button icon. */

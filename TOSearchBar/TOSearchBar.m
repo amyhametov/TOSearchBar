@@ -119,8 +119,7 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
     if (self.barBackgroundView == nil) {
         self.barBackgroundView = [[UIImageView alloc] initWithImage:[TOSearchBar sharedSearchBarBackground]];
     }
-    self.barBackgroundView.autoresizingMask = UIViewAutoresizingFlexibleTopMargin |
-    UIViewAutoresizingFlexibleBottomMargin | UIViewAutoresizingFlexibleWidth;
+
     self.barBackgroundView.tintColor = self.barBackgroundTintColor;
     [self addSubview:self.barBackgroundView];
     
@@ -228,6 +227,7 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
     
     // Layout the background view (and content container)
     frame = self.barBackgroundView.frame;
+    frame.size.height = [TOSearchBar sharedBackgroundFrame].size.height;
     frame.size.width = (self.frame.size.width) - (self.horizontalInset * 2.0f);
     if ((self.editing || self.hasSearchText) && self.cancelButton) {
         frame.size.width -= self.cancelButton.frame.size.width;
