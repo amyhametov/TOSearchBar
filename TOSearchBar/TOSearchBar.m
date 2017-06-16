@@ -216,6 +216,10 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
         self.cancelButton.alpha = (self.editing || self.hasSearchText) ? 1.0f : 0.0f;
         frame = self.cancelButton.frame;
         frame.origin.y = (CGRectGetHeight(self.frame) - frame.size.height) * 0.5f;
+        frame.size.width = [[self.cancelButton titleForState:UIControlStateNormal]
+                            boundingRectWithSize:CGSizeMake(INT_MAX, INT_MAX)
+                            options:NSStringDrawingUsesLineFragmentOrigin|NSStringDrawingUsesFontLeading
+                            attributes:@{NSFontAttributeName:self.cancelButton.titleLabel.font} context:nil].size.width+ self.horizontalInset;
         if (self.editing || self.hasSearchText) {
             frame.origin.x = (CGRectGetWidth(self.frame) - (frame.size.width + self.horizontalInset));
         }
