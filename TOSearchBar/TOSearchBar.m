@@ -311,6 +311,11 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
 }
 
 #pragma mark - Event Handling -
+
+- (void)shouldCancel {
+    [self cancelButttonTapped:nil];
+}
+
 - (void)tapGestureRecognized:(UITapGestureRecognizer *)recognizer
 {
     [self becomeFirstResponder];

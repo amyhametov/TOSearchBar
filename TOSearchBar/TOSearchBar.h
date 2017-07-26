@@ -152,6 +152,10 @@ IB_DESIGNABLE
 - (instancetype)initWithCoder:(NSCoder *)aDecoder andStyle:(TOSearchBarStyle)style;
 
 - (void)setUpViews;
+/**
+ Like cancel was tapped.
+ */
+- (void)shouldCancel;
 
 @end
 
