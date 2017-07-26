@@ -88,6 +88,16 @@ static const CGFloat kTOSearchBarIconMargin = 5.0f; // spacing between icon and 
     return self;
 }
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder andStyle:(TOSearchBarStyle)style
+{
+    if (self = [super initWithCoder:aDecoder]) {
+        _style = style;
+        [self setUpViews];
+    }
+    
+    return self;
+}
+
 - (void)dealloc
 {
     [TOSearchBar cleanUpSharedAssets];

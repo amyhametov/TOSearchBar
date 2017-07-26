@@ -149,6 +149,8 @@ IB_DESIGNABLE
  */
 - (instancetype)initWithStyle:(TOSearchBarStyle)style;
 
+- (instancetype)initWithCoder:(NSCoder *)aDecoder andStyle:(TOSearchBarStyle)style;
+
 - (void)setUpViews;
 
 @end
