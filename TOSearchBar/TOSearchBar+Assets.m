@@ -21,7 +21,11 @@
 //  IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
 #import "TOSearchBar+Assets.h"
-@import UIKit;
+#if __has_feature(modules)
+    @import UIKit;
+#else
+    #import <UIKit/UIKit.h>
+#endif
 
 /* A statically held map table that holds one instance of every image generated. */
 /* Once all images are released, the map table is also cleaned up */
